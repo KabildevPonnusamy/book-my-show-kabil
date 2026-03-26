@@ -1,0 +1,19 @@
+.movie-card__cover {
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+
+.movie-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 200ms ease;
+  will-change: transform;
+}
+
+.ant-card-hoverable:hover .movie-card__img {
+  transform: scale(1.05);
+}
+
