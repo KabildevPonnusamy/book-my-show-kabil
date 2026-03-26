@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router'
 import { Alert, Button, Spin } from 'antd'
 
 const PaymentReturn = () => {
+
+    const BACKEND_BASE_URL = import.meta.env.VITE_BACKEND_BASE_URL;
     const [isLoading, setIsLoading] = useState(true)
     const [status, setStatus] = useState(null)
     const [message, setMessage] = useState('')
@@ -23,7 +25,7 @@ const PaymentReturn = () => {
 
         const fetchStatus = async () => {
             try {
-                const res = await fetch(`http://localhost:8080/payments/${sessionId}`, {
+                const res = await fetch(`${BACKEND_BASE_URL}}/payments/${sessionId}`, {
                     headers: {
                         Authorization: `Bearer ${localStorage.getItem('token')}`,
                     },
