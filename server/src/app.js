@@ -12,12 +12,14 @@ const { ApiError } = require('./core/ApiErrors');
 const app = express();
 
 app.use(express.json());
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
-  }),
-); // It allows the request from cross origin
+app.use(cors());
+
+// app.use(
+//   cors({
+//     origin: "http://localhost:5173",
+//     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+//   }),
+// ); // It allows the request from cross origin
 
 app.use(moviesRoutes);
 app.use(userRouter);
