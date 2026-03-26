@@ -1,13 +1,14 @@
 import React, { useContext } from "react";
 import { Layout as AntLayout, Input, Button, Dropdown, Avatar } from "antd";
 import { SearchOutlined, UserOutlined } from "@ant-design/icons";
-import { Link } from "react-router";
+import { Link, useNavigate  } from "react-router";
 import UserContext from "../context/user-context";
 
 const { Header, Content, Footer } = AntLayout;
 
 const AppLayout = (props) => {
   const { user, isAuthenticated, logout } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const profileItems = [
     {
